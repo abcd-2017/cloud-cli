@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cli</groupId>
+    <artifactId>cloud-cli</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <description>cloud第三方工具</description>
+
+    <modules>
+        <module>cloud-cli-common</module>
+        <module>cloud-gateway</module>
+    </modules>
+
+    <properties>
+        <Cloud-cli.version>1.0</Cloud-cli.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <SpringBoot.version>2.6.3</SpringBoot.version>
+        <SpringCloud.version>2021.0.1</SpringCloud.version>
+        <SpringCloudAlibaba.version>2021.0.1.0</SpringCloudAlibaba.version>
+        <hutool.version>5.8.9</hutool.version>
+        <MyBatis-Plus-Boot.version>3.5.2</MyBatis-Plus-Boot.version>
+        <Knife4-Spring-Boot.version>3.0.3</Knife4-Spring-Boot.version>
+        <Fastjson2.version>2.0.16</Fastjson2.version>
+        <lombok.version>1.18.24</lombok.version>
+        <Gson.version>2.10</Gson.version>
+        <Redisson.version>3.17.7</Redisson.version>
+        <Logstash-logback.version>7.2</Logstash-logback.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--SpringCloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${SpringCloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--SpringCloudAlibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${SpringCloudAlibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--SpringBoot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${SpringBoot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--hutool 工具包-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <version>${hutool.version}</version>
+                <artifactId>hutool-all</artifactId>
+            </dependency>
+            <!--knife4j api管理，提供ui和后台-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${Knife4-Spring-Boot.version}</version>
+            </dependency>
+            <!--knife4j 只包括后台api-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>${Knife4-Spring-Boot.version}</version>
+            </dependency>
+            <!--mybatis plus 数据库框架-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${MyBatis-Plus-Boot.version}</version>
+            </dependency>
+            <!--mybatis plus 代码生成器-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${MyBatis-Plus-Boot.version}</version>
+            </dependency>
+            <!--fastjson2 阿里的json解析器和生成器-->
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${Fastjson2.version}</version>
+            </dependency>
+            <!--lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <!--gson-->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${Gson.version}</version>
+            </dependency>
+            <!--redisson-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${Redisson.version}</version>
+            </dependency>
+            <!--logstash 日志收集-->
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${Logstash-logback.version}</version>
+            </dependency>
+
+            <!--公共导入模块-->
+            <dependency>
+                <groupId>com.cli</groupId>
+                <artifactId>cloud-common-core</artifactId>
+                <version>${Cloud-cli.version}</version>
+            </dependency>
+            <!--redis模块-->
+            <dependency>
+                <groupId>com.cli</groupId>
+                <artifactId>cloud-common-redis</artifactId>
+                <version>${Cloud-cli.version}</version>
+            </dependency>
+            <!--注册中心模块-->
+            <dependency>
+                <groupId>com.cli</groupId>
+                <artifactId>cloud-common-modules</artifactId>
+                <version>${Cloud-cli.version}</version>
+            </dependency>
+            <!--api管理模块-->
+            <dependency>
+                <groupId>com.cli</groupId>
+                <artifactId>cloud-common-knife4j</artifactId>
+                <version>${Cloud-cli.version}</version>
+            </dependency>
+            <!--MyBatisPlus 数据库框架模块-->
+            <dependency>
+                <groupId>com.cli</groupId>
+                <artifactId>cloud-common-mybatis</artifactId>
+                <version>${Cloud-cli.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cli</groupId>
+                <artifactId>cloud-common-logs</artifactId>
+                <version>1.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- bootstrap 启动器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>

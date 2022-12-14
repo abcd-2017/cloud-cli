@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.cli</groupId>
+        <artifactId>cloud-cli</artifactId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>cloud-cli-common</artifactId>
+    <packaging>pom</packaging>
+    <description>公用模块</description>
+
+    <modules>
+        <module>cloud-common-redis</module>
+        <module>cloud-common-core</module>
+        <module>cloud-common-mybatis</module>
+        <module>cloud-common-knife4j</module>
+        <module>cloud-common-modules</module>
+        <module>cloud-common-logs</module>
+    </modules>
+
+</project>
